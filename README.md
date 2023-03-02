@@ -75,46 +75,6 @@ Product sold in November has highest quantity that has around 13,41% product sol
 ![revenue 1](https://user-images.githubusercontent.com/75175081/127734242-42991f19-1ef5-4af5-b623-fdaf7c6cc122.png)
 Revenue in November has highest amount that has  13,41% revenue from total revenue along 1 year. Therefore the business team can replicate the success of sales strategies in November to be implemented in other months
 
-# RFM Analysis
-
-- Recency Frequency Monetary (RFM)
-- RFM analysis allows you to segment customers by the frequency and value of purchases and identify those customers who spend the most money.
-- Recency — how long it’s been since a customer bought something from us.
-- Frequency — how often a customer buys from us.
-- Monetary value — the total value of purchases a customer has made.
-
-# Modeling Data: RFM Quantiles
-
-- Now we split the metrics into segments using quantiles.
-- We will assign a score from 1 to 4 to each Recency, Frequency and Monetary respectively.
-- 1 is the highest value, and 4 is the lowest value.
-- A final RFM score (Overall Value) is calculated simply by combining individual RFM score numbers.
-
-![image](https://user-images.githubusercontent.com/75175081/127734694-d312d392-7994-4f7d-adfe-e55d01fdc5f4.png)
-![image](https://user-images.githubusercontent.com/75175081/127737315-58d588ee-371b-4a8b-8c9f-d2e4d696939f.png)
-
-# Modeling Data: K-Means Clustering
-- K-Means clustering algorithm is an unsupervised machine learning algorithm that uses multiple iterations to segment the unlabeled data points into K different clusters in a way such that each data point belongs to only a single group that has similar properties.
-- K-means gives the best result under the following conditions:
-- Data’s distribution is not skewed.
-- Data is standardised.
-- The data is highly skewed, therefore I will perform log transformations to reduce the skewness of each variable and I standardised the data.
-- Finding the optimal number of clusters
-
-![finding k](https://user-images.githubusercontent.com/75175081/127736473-c222dcb1-6bcb-4746-bb11-b38b37f49eba.png)
-
-# Evaluating Model: K-Means Clustering
-- Davies Bouldin Score is a metric for evaluating clustering algorithms. 
-- The smaller Davies Bouldin Score is The more optimal the cluster.
-![image](https://user-images.githubusercontent.com/75175081/127736802-fd0e6465-1c20-4e8a-8a35-a3fc2f85280a.png)
-K-Means 4 clusters has lowest Davies Bouldin Score than other cluster. Therefore the optimum cluster is 4. 
-
-# Interpretation of the clusters formed using K-Means
-- "Cluster 0" has 29% customers. It belongs to the “Loyal Customer" segment as they Haven’t purchased for some time, but used to purchase frequently (F=2) and spent a lot. 
-- "Cluster 1" has 20% customers. It can be interpreted as “Almost Lost". They purchase recently (R=2). However they do not purchase frequently and do not spent a lot. 
-- "Cluster 2“ has 30% customers. It can be interpreted as "Lost Cheap Customers". Their last purchase is long ago (R=4), purchased very few (F=4) and spent little (M=4).
-- "Cluster 3“has 21% customers. It belongs to the "Best Customers" segment which we saw earlier as they purchase recently (R=1), frequent buyers (F=1), and spent the most (M=1).
-![kmeans 2](https://user-images.githubusercontent.com/75175081/127737861-0f62e50f-359b-4a74-9aa1-b59198d68570.png)
 
 # Recommendation
 - Recommendation for “Best Customers" segment: Focus on increasing customer purchases therefore it is necessary to form a cross/Up Selling Strategy.
